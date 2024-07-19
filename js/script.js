@@ -176,10 +176,6 @@ createApp({
     methods: {
         contactClicked(index) {
             this.active = index;
-
-
-
-
         }
     }
 

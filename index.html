@@ -61,7 +61,8 @@
                             <ul class="p-0 m-0">
                                 <li id="contact"
                                     class="d-flex align-items-center justify-content-between pb-3 pt-2 pe-2"
-                                    v-for="person, index in contacts" @click="contactClicked(index)">
+                                    v-for="person, index in contacts" @click="contactClicked(index)"
+                                    :class="active == index ? 'clicked' : ''">
                                     <div class="d-flex">
                                         <div class="me-4 ms-3"> <img :src="person.avatar" alt=""></div>
                                         <div>
