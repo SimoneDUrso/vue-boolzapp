@@ -5,35 +5,45 @@
 }
 
 body {
-    /* height: 100vh; */
+    height: 100vh;
 }
 
 #app {
-    height: 100%;
     background-color: #009687;
     background-image: linear-gradient(to bottom, #009687 0px, #009687 150px, #D7D8D3 20px, #D7D8D3 200px);
     padding-top: 30px;
+    height: 100%;
 }
 
-.container {
-    /* height: 800px; */
-    border: 1px solid black;
+/* .container {
+    height: 100%
+
 }
 
 .col-4,
 .col-8 {
-    border: 1px solid red;
-}
+    border: 1px solid black;
+} */
 
-.col-4 img {
+.col-4 img,
+.col-8 img {
     border-radius: 100%;
     width: 50px;
+}
+
+.col-8 {
+    background-image: url(../img/mine.jpg);
 }
 
 .fa-bell-slash {
     padding: 10px 8px;
     background-color: white;
     border-radius: 100%;
+}
+
+.fa-solid,
+.fa-regular {
+    cursor: pointer;
 }
 
 /* STYLE CLASSES */
