@@ -14,3 +14,7 @@ nome e immagine di ogni contatto
 4 - Nella parte statica creiamo un input text che dia la possibilità all'utente di inserire dei messaggi mostrati nella chat;
 5 - Creiamo un method per l'aggiunta dei messaggi in chat;
 6 - Creiamo un un v-for per ciclare la lista dei contatti e visualizzarla a sinistra;
+
+<!-- MILESTONE 2 -->
+1 - Dichiaro una funzione per aprire la chat del contatto;
+2 - La funzione deve renderci possibile l'apertura della chat con la relativa conversazione al click sul contatto;
