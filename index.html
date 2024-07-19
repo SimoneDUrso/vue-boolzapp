@@ -93,33 +93,34 @@
                             </div>
 
                             <!-- MESSAGGI STATICI -->
-                            <div id="main-chat" class="pt-5 px-5">
-                                <div class="d-flex justify-content-end ">
-                                    <div class="message-sent mb-4">
+
+                            <div id="main-chat" class="pt-5 px-5 d-flex flex-column">
+                                <div>
+                                    <div class="message-sent mb-4 "
+                                        :class="contacts[0].messages[0].status == 'sent' ? 'message-sent float-end' : ' message-received float-start' ">
                                         <p class="margin-message text-start m-0">
                                             Hai portato a spasso il cane?</p>
                                         <p class="text-end text-secondary">15:50</p>
                                     </div>
                                 </div>
 
-                                <div class="d-flex justify-content-end ">
-                                    <div class="message-sent mb-4">
+                                <div>
+                                    <div class="message-sent mb-4"
+                                        :class="contacts[0].messages[1].status == 'sent' ? 'message-sent float-end' : ' message-received float-start' ">
                                         <p class="margin-message text-start m-0">
                                             Ricordati di stendere i panni</p>
                                         <p class="text-end text-secondary">15:50</p>
                                     </div>
                                 </div>
 
-                                <div class="d-flex justify-content-start ">
-                                    <div class="message-received mb-4 bg-light">
+                                <div>
+                                    <div class="message-received mb-4 bg-light"
+                                        :class="contacts[0].messages[2].status == 'sent' ? 'message-sent float-end' : ' message-received float-start' ">
                                         <p class=" margin-message text-start m-0">
                                             Tutto fatto!</p>
                                         <p class="text-end text-secondary">15:50</p>
                                     </div>
                                 </div>
-
-
-
                             </div>
                         </div>
 
