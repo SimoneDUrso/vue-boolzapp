@@ -3,3 +3,48 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    /* height: 100vh; */
+}
+
+#app {
+    height: 100%;
+    background-color: #009687;
+    background-image: linear-gradient(to bottom, #009687 0px, #009687 150px, #D7D8D3 20px, #D7D8D3 200px);
+    padding-top: 30px;
+}
+
+.container {
+    /* height: 800px; */
+    border: 1px solid black;
+}
+
+.col-4,
+.col-8 {
+    border: 1px solid red;
+}
+
+.col-4 img {
+    border-radius: 100%;
+    width: 50px;
+}
+
+.fa-bell-slash {
+    padding: 10px 8px;
+    background-color: white;
+    border-radius: 100%;
+}
+
+/* STYLE CLASSES */
+.bg-notifications {
+    background-color: #8DD7FA;
+}
+
+.color-notifications {
+    color: #8DD7FA;
+}
+
+.bg-profile {
+    background-color: #E6E6E6;
+}
