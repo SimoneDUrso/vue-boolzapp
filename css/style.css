@@ -51,6 +51,11 @@ ul {
     overflow-y: auto;
 }
 
+li:hover {
+    cursor: pointer;
+    background-color: rgb(207, 207, 207);
+}
+
 
 /* STYLE CLASSES */
 .bg-notifications {
@@ -79,4 +84,8 @@ ul {
     min-width: 180px;
     max-width: 600px;
     background-color: white;
+}
+
+.clicked {
+    background-color: rgb(207, 207, 207);
 }
