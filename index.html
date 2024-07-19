@@ -20,7 +20,7 @@
         <div id="app">
             <div class="container pb-5">
                 <div class="row h-100">
-                    <div class="col-4 px-0">
+                    <div class="col-4 px-0 bg-light">
 
                         <!-- Div che contiene due div, uno per l'immagine profilo e uno per le icone -->
                         <div class="d-flex justify-content-between align-items-center p-3 bg-profile">
@@ -47,23 +47,24 @@
 
                         <!-- Div che contiene un pulsante e un input per il filtraggio dei contatti -->
                         <div>
-                            <div class="input-group my-1 border border-secondary">
-                                <button class="btn btn-sm bg-light border-0 px-3 " type="button" id="button-addon1"><i
-                                        class="fa-solid fa-magnifying-glass" style="color: #c0c0c0;"></i></button>
+                            <div class="input-group my-1 border">
+                                <button class="btn btn-sm bg-light border-light px-3 " type="button"
+                                    id="button-addon1"><i class="fa-solid fa-magnifying-glass"
+                                        style="color: #c0c0c0;"></i></button>
                                 <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
                                     aria-label="Example text with button addon" aria-describedby="button-addon1">
                             </div>
-
                         </div>
 
                         <!-- Div che contiene la lista dei contatti -->
                         <div class="bg-light">
                             <ul class="p-0 m-0">
-                                <li class="d-flex align-items-center justify-content-between pb-3 pt-2 pe-2">
+                                <li class="d-flex align-items-center justify-content-between pb-3 pt-2 pe-2"
+                                    v-for="person, index in contacts">
                                     <div class="d-flex">
-                                        <div class="me-4 ms-3"> <img src="./img/avatar_1.jpg" alt=""></div>
+                                        <div class="me-4 ms-3"> <img :src="person.avatar" alt=""></div>
                                         <div>
-                                            <p class="m-0">Michele</p>
+                                            <p class="m-0"> {{ person.name }} </p>
                                             <p class="text-secondary">Ultimo messaggio inviato</p>
                                         </div>
                                     </div>
@@ -71,116 +72,59 @@
                                         <p>12:00</p>
                                     </div>
                                 </li>
-
-                                <li class="d-flex align-items-center justify-content-between py-3 pe-2">
-                                    <div class="d-flex">
-                                        <div class="me-4 ms-3"> <img src="./img/avatar_2.jpg" alt=""></div>
-                                        <div>
-                                            <p class="m-0">Michele</p>
-                                            <p class="text-secondary">Ultimo messaggio inviato</p>
-                                        </div>
-                                    </div>
-                                    <div class="w-25 align-self-start text-end text-secondary">
-                                        <p>12:00</p>
-                                    </div>
-                                </li>
-
-                                <li class="d-flex align-items-center justify-content-between py-3 pe-2">
-                                    <div class="d-flex">
-                                        <div class="me-4 ms-3"> <img src="./img/avatar_3.jpg" alt=""></div>
-                                        <div>
-                                            <p class="m-0">Michele</p>
-                                            <p class="text-secondary">Ultimo messaggio inviato</p>
-                                        </div>
-                                    </div>
-                                    <div class="w-25 align-self-start text-end text-secondary">
-                                        <p>12:00</p>
-                                    </div>
-                                </li>
-
-                                <li class="d-flex align-items-center justify-content-between py-3 pe-2">
-                                    <div class="d-flex">
-                                        <div class="me-4 ms-3"> <img src="./img/avatar_4.jpg" alt=""></div>
-                                        <div>
-                                            <p class="m-0">Michele</p>
-                                            <p class="text-secondary">Ultimo messaggio inviato</p>
-                                        </div>
-                                    </div>
-                                    <div class="w-25 align-self-start text-end text-secondary">
-                                        <p>12:00</p>
-                                    </div>
-                                </li>
-
-                                <li class="d-flex align-items-center justify-content-between py-3 pe-2">
-                                    <div class="d-flex">
-                                        <div class="me-4 ms-3"> <img src="./img/avatar_5.jpg" alt=""></div>
-                                        <div>
-                                            <p class="m-0">Michele</p>
-                                            <p class="text-secondary">Ultimo messaggio inviato</p>
-                                        </div>
-                                    </div>
-                                    <div class="w-25 align-self-start text-end text-secondary">
-                                        <p>12:00</p>
-                                    </div>
-                                </li>
-
-                                <li class="d-flex align-items-center justify-content-between py-3 pe-2">
-                                    <div class="d-flex">
-                                        <div class="me-4 ms-3"> <img src="./img/avatar_6.jpg" alt=""></div>
-                                        <div>
-                                            <p class="m-0">Michele</p>
-                                            <p class="text-secondary">Ultimo messaggio inviato</p>
-                                        </div>
-                                    </div>
-                                    <div class="w-25 align-self-start text-end text-secondary">
-                                        <p>12:00</p>
-                                    </div>
-                                </li>
-
-                                <li class="d-flex align-items-center justify-content-between py-3 pe-2">
-                                    <div class="d-flex">
-                                        <div class="me-4 ms-3"> <img src="./img/avatar_7.jpg" alt=""></div>
-                                        <div>
-                                            <p class="m-0">Michele</p>
-                                            <p class="text-secondary">Ultimo messaggio inviato</p>
-                                        </div>
-                                    </div>
-                                    <div class="w-25 align-self-start text-end text-secondary">
-                                        <p>12:00</p>
-                                    </div>
-                                </li>
-
-                                <li class="d-flex align-items-center justify-content-between py-3 pe-2">
-                                    <div class="d-flex">
-                                        <div class="me-4 ms-3"> <img src="./img/avatar_8.jpg" alt=""></div>
-                                        <div>
-                                            <p class="m-0">Michele</p>
-                                            <p class="text-secondary">Ultimo messaggio inviato</p>
-                                        </div>
-                                    </div>
-                                    <div class="w-25 align-self-start text-end text-secondary">
-                                        <p>12:00</p>
-                                    </div>
-                                </li>
-
                             </ul>
                         </div>
                     </div>
 
                     <div class="col-8 p-0 d-flex flex-column justify-content-between">
-                        <div class="d-flex p-2 align-items-center bg-profile">
-                            <div class="d-flex"> <img src="./img/avatar_1.jpg" alt=""></div>
-                            <div class="w-50 ms-3 d-flex flex-column align-items-start justify-content-center">
-                                <p class="m-0">Michele</p>
-                                <p class="text-secondary">Ultimo accesso oggi alle 12:00</p>
+                        <div class="d-flex flex-column">
+                            <div class="bg-profile d-flex p-2 align-items-center">
+                                <div class="d-flex"> <img src="./img/avatar_1.jpg" alt=""></div>
+                                <div class="w-50 ms-3 d-flex flex-column align-items-start justify-content-center">
+                                    <p class="m-0">Michele</p>
+                                    <p class="text-secondary">Ultimo accesso oggi alle 12:00</p>
+                                </div>
+
+                                <div class="d-flex text-end w-100 justify-content-end">
+                                    <i class="fa-solid fa-magnifying-glass fs-5 mx-2 text-secondary"></i>
+                                    <i class="fa-solid fa-paperclip mx-2 fs-5 text-secondary"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical mx-2 fs-5 text-secondary"></i>
+                                </div>
                             </div>
 
-                            <div class="d-flex text-end w-100 justify-content-end">
-                                <i class="fa-solid fa-magnifying-glass fs-5 mx-2 text-secondary"></i>
-                                <i class="fa-solid fa-paperclip mx-2 fs-5 text-secondary"></i>
-                                <i class="fa-solid fa-ellipsis-vertical mx-2 fs-5 text-secondary"></i>
+                            <!-- MESSAGGI STATICI -->
+                            <div id="main-chat" class="pt-5 px-5">
+                                <div class="d-flex justify-content-end ">
+                                    <div class="message-sent mb-4">
+                                        <p class="margin-message text-start m-0">
+                                            Hai portato a spasso il cane?</p>
+                                        <p class="text-end text-secondary">15:50</p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-end ">
+                                    <div class="message-sent mb-4">
+                                        <p class="margin-message text-start m-0">
+                                            Ricordati di stendere i panni</p>
+                                        <p class="text-end text-secondary">15:50</p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-start ">
+                                    <div class="message-received mb-4 bg-light">
+                                        <p class=" margin-message text-start m-0">
+                                            Tutto fatto!</p>
+                                        <p class="text-end text-secondary">15:50</p>
+                                    </div>
+                                </div>
+
+
+
                             </div>
                         </div>
+
+
+
 
                         <div class="container-text py-3 bg-profile">
                             <div class="row">

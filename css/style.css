@@ -15,16 +15,6 @@ body {
     height: 100%;
 }
 
-/* .container {
-    height: 100%
-
-}
-
-.col-4,
-.col-8 {
-    border: 1px solid black;
-} */
-
 .col-4 img,
 .col-8 img {
     border-radius: 100%;
@@ -33,6 +23,7 @@ body {
 
 .col-8 {
     background-image: url(../img/mine.jpg);
+
 }
 
 .fa-bell-slash {
@@ -46,6 +37,21 @@ body {
     cursor: pointer;
 }
 
+.margin-message {
+    margin: 20px 0px;
+}
+
+#main-chat {
+    max-height: 815px;
+    overflow-y: auto;
+}
+
+ul {
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+
 /* STYLE CLASSES */
 .bg-notifications {
     background-color: #8DD7FA;
@@ -57,4 +63,19 @@ body {
 
 .bg-profile {
     background-color: #E6E6E6;
+}
+
+.message-sent {
+    background-color: #D2F5BB;
+    padding: 10px 10px 0px 10px;
+    border-radius: 10px;
+    min-width: 180px;
+    max-width: 600px;
+}
+
+.message-received {
+    padding: 10px 10px 0px 10px;
+    border-radius: 10px;
+    min-width: 180px;
+    max-width: 600px;
 }
