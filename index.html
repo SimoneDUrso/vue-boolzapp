@@ -95,16 +95,16 @@
                             <!-- MESSAGGI STATICI -->
 
                             <div id="main-chat" class="pt-5 px-5 d-flex flex-column">
-                                <div>
+                                <div v-for="message, index in contacts[active].messages">
                                     <div class="message-sent mb-4 "
-                                        :class="contacts[0].messages[0].status == 'sent' ? 'message-sent float-end' : ' message-received float-start' ">
+                                        :class="message.status == 'sent' ? 'message-sent float-end' : ' message-received float-start' ">
                                         <p class="margin-message text-start m-0">
-                                            Hai portato a spasso il cane?</p>
+                                            {{ message.message }}</p>
                                         <p class="text-end text-secondary">15:50</p>
                                     </div>
                                 </div>
 
-                                <div>
+                                <!-- <div>
                                     <div class="message-sent mb-4"
                                         :class="contacts[0].messages[1].status == 'sent' ? 'message-sent float-end' : ' message-received float-start' ">
                                         <p class="margin-message text-start m-0">
@@ -120,7 +120,7 @@
                                             Tutto fatto!</p>
                                         <p class="text-end text-secondary">15:50</p>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
