@@ -6,6 +6,8 @@ createApp({
 
             active: 0,
             newMessage: null,
+            filter: '',
+            filtered_contacts: [],
 
             contacts: [
                 {
@@ -174,6 +176,9 @@ createApp({
 
         }
     },
+    created() {
+        this.search()
+    },
 
     methods: {
         contactClicked(index) {
@@ -199,7 +204,16 @@ createApp({
                 }, 1000);
             }
             this.newMessage = null
-        }
-    }
+        },
+
+        search() {
+            this.filtered_contacts = this.contacts.filter(contact =>
+                contact.name.toLowerCase().includes(this.filter.toLowerCase())
+            )
+
+            console.log(this.filtered_contacts)
+        },
+    },
+
 
 }).mount("#app")

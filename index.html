@@ -52,7 +52,8 @@
                                     id="button-addon1"><i class="fa-solid fa-magnifying-glass"
                                         style="color: #c0c0c0;"></i></button>
                                 <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
-                                    aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                    aria-label="Example text with button addon" aria-describedby="button-addon1"
+                                    v-model="filter" @input="search">
                             </div>
                         </div>
 
@@ -61,7 +62,7 @@
                             <ul class="p-0 m-0">
                                 <li id="contact"
                                     class="d-flex align-items-center justify-content-between pb-3 pt-2 pe-2"
-                                    v-for="person, index in contacts" @click="contactClicked(index)"
+                                    v-for="person, index in filtered_contacts" @click="contactClicked(index)"
                                     :class="active == index ? 'clicked' : ''">
                                     <div class="d-flex">
                                         <div class="me-4 ms-3"> <img :src="person.avatar" alt=""></div>

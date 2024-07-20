@@ -22,3 +22,7 @@ nome e immagine di ogni contatto
 <!-- MILESTONE 3 -->
 
 1 - Dichiaro un'altra funzione che mi permette di aggiungere un messaggio alla chat con la classe message-sent e di avere una risposta dopo un secondo tramite setTimeout, il tutto tramite keyup.enter;
+
+<!-- MILESTONE 4 -->
+1 - Creiamo un array vuoto;
+2 - Creiamo una funzione che controlla se ogni contatto dell'array include le stesse lettere che scriviamo in input;
