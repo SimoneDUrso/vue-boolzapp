@@ -5,6 +5,7 @@ createApp({
         return {
 
             active: 0,
+            newMessage: null,
 
             contacts: [
                 {
@@ -176,6 +177,16 @@ createApp({
     methods: {
         contactClicked(index) {
             this.active = index;
+        },
+
+        addMessage() {
+            let addWords = {
+                message: this.newMessage,
+                status: "sent"
+            }
+
+            this.contacts[this.active].messages.push(addWords),
+                this.newMessage = null
         }
     }
 

@@ -116,7 +116,7 @@
 
                                 <div class="col-10 d-flex justify-content-center">
                                     <input type="text" class="w-100 form-control py-2" placeholder="Scrivi un messaggio"
-                                        @keyup.enter="addMessage()">
+                                        v-model="newMessage" @keyup.enter="addMessage()">
                                 </div>
 
                                 <div class="col-1 d-flex justify-content-center align-items-center">
