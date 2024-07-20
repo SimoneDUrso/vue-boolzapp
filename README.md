@@ -18,3 +18,7 @@ nome e immagine di ogni contatto
 <!-- MILESTONE 2 -->
 1 - Dichiaro una funzione per aprire la chat del contatto;
 2 - La funzione deve renderci possibile l'apertura della chat con la relativa conversazione al click sul contatto;
+
+<!-- MILESTONE 3 -->
+
+1 - Dichiaro un'altra funzione che mi permette di aggiungere un messaggio alla chat con la classe message-sent e di avere una risposta dopo un secondo tramite setTimeout, il tutto tramite keyup.enter;
