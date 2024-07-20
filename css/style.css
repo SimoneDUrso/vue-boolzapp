@@ -44,6 +44,7 @@ body {
 #main-chat {
     max-height: 815px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 ul {
@@ -56,6 +57,22 @@ li:hover {
     background-color: rgb(207, 207, 207);
 }
 
+.message-sent {
+    background-color: #D2F5BB;
+    padding: 10px 10px 0px 10px;
+    border-radius: 10px;
+    min-width: 180px;
+    max-width: 600px;
+    word-wrap: break-word;
+}
+
+.message-received {
+    padding: 10px 10px 0px 10px;
+    border-radius: 10px;
+    min-width: 180px;
+    max-width: 600px;
+    background-color: white;
+}
 
 /* STYLE CLASSES */
 .bg-notifications {
@@ -70,21 +87,6 @@ li:hover {
     background-color: #E6E6E6;
 }
 
-.message-sent {
-    background-color: #D2F5BB;
-    padding: 10px 10px 0px 10px;
-    border-radius: 10px;
-    min-width: 180px;
-    max-width: 600px;
-}
-
-.message-received {
-    padding: 10px 10px 0px 10px;
-    border-radius: 10px;
-    min-width: 180px;
-    max-width: 600px;
-    background-color: white;
-}
 
 .clicked {
     background-color: rgb(207, 207, 207);
