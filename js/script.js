@@ -180,13 +180,24 @@ createApp({
         },
 
         addMessage() {
-            let addWords = {
+            let myMessage = {
                 message: this.newMessage,
                 status: "sent"
             }
 
-            this.contacts[this.active].messages.push(addWords),
-                this.newMessage = null
+            let pcMessage = {
+                message: "Ok",
+                status: "received"
+            }
+
+            if (!this.newMessage == "") {
+                this.contacts[this.active].messages.push(myMessage)
+
+                setTimeout(() => {
+                    this.contacts[this.active].messages.push(pcMessage)
+                }, 1000);
+            }
+            this.newMessage = null
         }
     }
 
