@@ -176,10 +176,6 @@ createApp({
 
         }
     },
-    created() {
-        this.search()
-    },
-
     methods: {
         contactClicked(index) {
             this.active = index;
@@ -206,14 +202,9 @@ createApp({
             this.newMessage = null
         },
 
-        search() {
-            this.filtered_contacts = this.contacts.filter(contact =>
-                contact.name.toLowerCase().includes(this.filter.toLowerCase())
-            )
-
-            console.log(this.filtered_contacts)
-        },
+        search(contact) {
+            return contact.name.toLowerCase().includes(this.filter.toLowerCase())
+        }
     },
-
 
 }).mount("#app")

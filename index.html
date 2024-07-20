@@ -53,27 +53,28 @@
                                         style="color: #c0c0c0;"></i></button>
                                 <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
                                     aria-label="Example text with button addon" aria-describedby="button-addon1"
-                                    v-model="filter" @input="search">
+                                    v-model="filter">
                             </div>
                         </div>
 
                         <!-- Div che contiene la lista dei contatti -->
                         <div class="bg-light">
-                            <ul class="p-0 m-0">
-                                <li id="contact"
-                                    class="d-flex align-items-center justify-content-between pb-3 pt-2 pe-2"
-                                    v-for="person, index in filtered_contacts" @click="contactClicked(index)"
-                                    :class="active == index ? 'clicked' : ''">
-                                    <div class="d-flex">
-                                        <div class="me-4 ms-3"> <img :src="person.avatar" alt=""></div>
-                                        <div>
-                                            <p class="m-0"> {{ person.name }} </p>
-                                            <p class="text-secondary">Ultimo messaggio inviato</p>
+                            <ul class="list-unstyled bg-white m-0">
+                                <li v-for="(person, index) in contacts" @click="contactClicked(index)"
+                                    v-show="search(person)">
+
+                                    <div class="profile d-flex justify-content-between align-items-center py-3 px-3">
+                                        <div class="d-flex justify-content-center">
+                                            <img :src="person.avatar" :alt="person.name">
+
+                                            <div class="d-flex justify-content-center flex-column">
+                                                <p class="mx-2 my-0">
+                                                    {{ person.name }}
+                                                </p>
+                                                <p class="text-secondary my-0 mx-2">Ultimo messaggio inviato</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="w-25 align-self-start text-end text-secondary">
-                                        <p>12:00</p>
-                                    </div>
+                                        <p class=" text-secondary text-end">12:00</p>
                                 </li>
                             </ul>
                         </div>
