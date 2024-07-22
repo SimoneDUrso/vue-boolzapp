@@ -7,6 +7,15 @@ createApp({
             active: 0,
             newMessage: null,
             filter: '',
+            randomAnswers: [
+                "Magari dopo",
+                "Ahahahah",
+                "Certo, perchè no!",
+                "Ti passo a prendere io?",
+                "Assolutamente no.",
+                "Ma chi sei?",
+                "Sparisci dalla mia vita!"
+            ],
 
             contacts: [
                 {
@@ -187,7 +196,7 @@ createApp({
             }
 
             let pcMessage = {
-                message: "Ok",
+                message: this.randomReplay(),
                 status: "received"
             }
 
@@ -203,7 +212,12 @@ createApp({
 
         search(contact) {
             return contact.name.toLowerCase().includes(this.filter.toLowerCase())
-        }
+        },
+
+        randomReplay() {
+            const random = Math.floor(Math.random() * this.randomAnswers.length)
+            return this.randomAnswers[random]
+        },
     },
 
 }).mount("#app")

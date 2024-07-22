@@ -24,7 +24,7 @@
 
                         <!-- Div che contiene due div, uno per l'immagine profilo e uno per le icone -->
                         <div class="d-flex justify-content-between align-items-center p-3 bg-profile">
-                            <div> <img src="./img/avatar_io.jpg" alt=""> Sofia </div>
+                            <div> <img src="./img/avatar_2.jpg" alt=""> Simone </div>
                             <div class="d-flex">
                                 <i class="fa-solid fa-circle-notch mx-2 fs-5 text-secondary"></i>
                                 <i class="fa-solid fa-message mx-2 fs-5 text-secondary"></i>
@@ -122,7 +122,11 @@
                                 </div>
 
                                 <div class="col-1 d-flex justify-content-center align-items-center">
-                                    <i class="fa-solid fa-microphone fs-5 text-secondary"></i>
+                                    <button v-if="!newMessage == '' " class="btn btn-sm " @click="addMessage"><i
+                                            class="fa-solid fa-paper-plane fs-5 text-secondary"></i></button>
+
+                                    <button v-else class="btn btn-sm "><i
+                                            class="fa-solid fa-microphone fs-5 text-secondary"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -132,8 +136,8 @@
         </div>
     </main>
 
-
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <script src="./js/script.js" type="text/javascript"></script>
 </body>
 
