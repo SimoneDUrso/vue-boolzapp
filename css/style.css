@@ -81,11 +81,11 @@ li:hover {
     background-color: white;
 }
 
-.dropdown-menu,
+/* .dropdown-menu,
 .dropdown-toggle {
     overflow-y: auto;
     min-height: 50px;
-}
+} */
 
 /* STYLE CLASSES */
 .bg-notifications {
