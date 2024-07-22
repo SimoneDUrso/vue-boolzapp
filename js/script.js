@@ -196,7 +196,7 @@ createApp({
         },
 
         addMessage() {
-            const now = DateTime.now().toFormat('HH:mm');
+            const now = DateTime.now().toFormat('dd/mm/yyyy HH:mm');
 
             let myMessage = {
                 message: this.newMessage,
@@ -225,7 +225,7 @@ createApp({
                 }, 3000);
 
                 setTimeout(() => {
-                    writing.innerHTML = "Ultimo accesso oggi alle" + now
+                    writing.innerHTML = "Ultimo accesso oggi alle" + now.split(" ")[1]
                 }, 5000);
             }
             this.newMessage = null
@@ -244,7 +244,8 @@ createApp({
             if (contact.messages.length > 0) {
                 return contact.messages[contact.messages.length - 1]
             }
-        }
+        },
+
     },
 
 }).mount("#app")
