@@ -49,13 +49,13 @@ body {
     overflow-x: hidden;
 }
 
-ul {
+.contacts {
     max-height: 700px;
     min-height: 700px;
     overflow-y: auto;
 }
 
-ul li {
+.contacts li {
     border-top: 1px solid rgb(218, 218, 218);
 }
 
@@ -81,11 +81,13 @@ li:hover {
     background-color: white;
 }
 
-/* .dropdown-menu,
-.dropdown-toggle {
-    overflow-y: auto;
-    min-height: 50px;
-} */
+.dropdown {}
+
+.dropdown-menu {
+    z-index: 100;
+    position: relative;
+    width: 50%;
+}
 
 /* STYLE CLASSES */
 .bg-notifications {

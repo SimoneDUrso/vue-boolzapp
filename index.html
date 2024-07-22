@@ -59,7 +59,7 @@
 
                         <!-- Div che contiene la lista dei contatti -->
                         <div class="bg-light">
-                            <ul class="list-unstyled bg-white m-0">
+                            <ul class="list-unstyled bg-white m-0 contacts">
                                 <li v-for="(person, index) in contacts" :class="active == index ? 'clicked' : '' "
                                     @click="contactClicked(index)" v-show="search(person) ">
 
@@ -102,16 +102,30 @@
 
                             <div id="main-chat" class="pt-5 px-5 d-flex flex-column">
                                 <div v-for="message, index in contacts[active].messages">
-                                    <div class="message-sent mb-4 "
+                                    <div class="message-sent mb-4 dropdown d-flex justify-content-between"
                                         :class="message.status == 'sent' ? 'message-sent float-end' : ' message-received float-start' ">
-                                        <p class="margin-message text-start m-0 d-flex justify-content-between">
-                                            {{ message.message }}
-                                            <button class="border-0 btn btn-sm ms-4 dropdown">
-                                                <i class="fa-solid fa-angle-down text-secondary mt-1 ms-2 "></i>
-                                            </button>
-                                        </p>
-                                        <p class="text-end text-secondary m-0"> {{message.date.split(" ")[1].slice(0,
-                                            5)}} </p>
+                                        <div>
+
+                                            <p class="margin-message text-start m-0 d-flex">
+                                                {{ message.message }}</p>
+                                        </div>
+                                        <div>
+                                            <div class="dropdown">
+                                                <button class="border-0 btn btn-sm ms-4 pt-0" type="button"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="fa-solid fa-angle-down text-secondary mt-1 ms-2"></i>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Message info</a></li>
+                                                    <li><a class="dropdown-item" href="#">Delete message</a></li>
+                                                </ul>
+
+                                            </div>
+
+                                            <p class="text-end text-secondary m-0">{{message.date.split(" ")[1].slice(0,
+                                                5)}}</p>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
