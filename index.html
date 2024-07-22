@@ -103,10 +103,13 @@
                             <div id="main-chat" class="pt-5 px-5 d-flex flex-column">
                                 <div v-for="message, index in contacts[active].messages">
                                     <div class="message-sent mb-4 dropdown d-flex justify-content-between"
-                                        :class="message.status == 'sent' ? 'message-sent float-end' : ' message-received float-start' ">
+                                        :class="message.status == 'sent' ? 'message-sent float-end' : ' message-received float-start'">
                                         <div>
-
-                                            <p class="margin-message text-start m-0 d-flex">
+                                            <em class="text-secondary"
+                                                v-if="message.message == 'Questo messaggio è stato eliminato.'"> <i
+                                                    class="fa-solid fa-ban me-1"></i>
+                                                {{message.message}}</em>
+                                            <p v-else class="margin-message text-start m-0 d-flex">
                                                 {{ message.message }}</p>
                                         </div>
                                         <div>
@@ -117,7 +120,10 @@
                                                 </button>
                                                 <ul class="dropdown-menu">
                                                     <li><a class="dropdown-item" href="#">Message info</a></li>
-                                                    <li><a class="dropdown-item" href="#">Delete message</a></li>
+                                                    <li><a class="dropdown-item" href="#"
+                                                            @click="deleteMessage(index)">Delete
+                                                            message</a>
+                                                    </li>
                                                 </ul>
 
                                             </div>

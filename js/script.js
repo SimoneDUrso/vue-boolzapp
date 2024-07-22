@@ -246,6 +246,13 @@ createApp({
             }
         },
 
+        deleteMessage(index) {
+            if (confirm("Sei sicuro di voler cancellare il messaggio? Non potrai più recuperarlo.")) {
+                let deleted = this.contacts[this.active].messages[index].message = "Questo messaggio è stato eliminato."
+
+            }
+        }
+
     },
 
 }).mount("#app")
