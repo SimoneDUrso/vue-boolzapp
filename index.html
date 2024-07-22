@@ -60,8 +60,8 @@
                         <!-- Div che contiene la lista dei contatti -->
                         <div class="bg-light">
                             <ul class="list-unstyled bg-white m-0">
-                                <li v-for="(person, index) in contacts" @click="contactClicked(index)"
-                                    v-show="search(person)">
+                                <li v-for="(person, index) in contacts" :class="active == index ? 'clicked' : '' "
+                                    @click="contactClicked(index)" v-show="search(person) ">
 
                                     <div class="profile d-flex justify-content-between align-items-center py-3 px-3">
                                         <div class="d-flex justify-content-center">
@@ -71,7 +71,8 @@
                                                 <p class="mx-2 my-0">
                                                     {{ person.name }}
                                                 </p>
-                                                <p class="text-secondary my-0 mx-2">Ultimo messaggio inviato</p>
+                                                <p class="text-secondary my-0 mx-2">{{ lastMessage(person).message }}
+                                                </p>
                                             </div>
                                         </div>
                                         <p class=" text-secondary text-end">12:00</p>
@@ -86,7 +87,8 @@
                                 <div class="d-flex"> <img :src=" contacts[active].avatar " alt=""> </div>
                                 <div class="w-50 ms-3 d-flex flex-column align-items-start justify-content-center">
                                     <p class="m-0">{{ contacts[active].name }}</p>
-                                    <p class="text-secondary">Ultimo accesso oggi alle 12:00</p>
+                                    <p id="writing" class="text-secondary">Ultimo accesso oggi alle {{ lastAccess() }}
+                                    </p>
                                 </div>
 
                                 <div class="d-flex text-end w-100 justify-content-end">
@@ -104,7 +106,8 @@
                                         :class="message.status == 'sent' ? 'message-sent float-end' : ' message-received float-start' ">
                                         <p class="margin-message text-start m-0">
                                             {{ message.message }}</p>
-                                        <p class="text-end text-secondary m-0">15:50</p>
+                                        <p class="text-end text-secondary m-0"> {{lastAccess() }} </p>
+                                        <!-- {{ message.date.split(' ')[1] }} -->
                                     </div>
                                 </div>
                             </div>

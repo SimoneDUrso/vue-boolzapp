@@ -1,4 +1,5 @@
 const { createApp } = Vue;
+const { DateTime } = luxon;
 
 createApp({
     data() {
@@ -189,23 +190,43 @@ createApp({
             this.active = index;
         },
 
+        lastAccess() {
+            const hour = DateTime.now().toFormat('HH:mm');
+            return hour;
+        },
+
         addMessage() {
+            const now = DateTime.now().toFormat('HH:mm');
+
             let myMessage = {
                 message: this.newMessage,
-                status: "sent"
+                status: "sent",
+                date: now
             }
 
             let pcMessage = {
                 message: this.randomReplay(),
-                status: "received"
+                status: "received",
+                date: now
             }
 
             if (!this.newMessage == "") {
                 this.contacts[this.active].messages.push(myMessage)
 
+                let writing = document.getElementById("writing")
+                writing.innerHTML = "Online"
                 setTimeout(() => {
-                    this.contacts[this.active].messages.push(pcMessage)
+                    writing.innerHTML = "Sta scrivendo..."
                 }, 1000);
+
+                setTimeout(() => {
+                    writing.innerHTML = "Online"
+                    this.contacts[this.active].messages.push(pcMessage)
+                }, 3000);
+
+                setTimeout(() => {
+                    writing.innerHTML = "Ultimo accesso oggi alle" + now
+                }, 5000);
             }
             this.newMessage = null
         },
@@ -218,6 +239,12 @@ createApp({
             const random = Math.floor(Math.random() * this.randomAnswers.length)
             return this.randomAnswers[random]
         },
+
+        lastMessage(contact) {
+            if (contact.messages.length > 0) {
+                return contact.messages[contact.messages.length - 1]
+            }
+        }
     },
 
 }).mount("#app")

@@ -59,7 +59,7 @@ ul li {
 
 li:hover {
     cursor: pointer;
-    background-color: rgb(207, 207, 207);
+    background-color: #E6E6E6;
 }
 
 .message-sent {
@@ -94,5 +94,5 @@ li:hover {
 
 
 .clicked {
-    background-color: rgb(207, 207, 207);
+    background-color: #E6E6E6;
 }
