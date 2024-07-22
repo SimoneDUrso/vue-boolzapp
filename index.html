@@ -75,7 +75,8 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <p class=" text-secondary text-end">12:00</p>
+                                        <p class=" text-secondary text-end">{{ person.messages[person.messages.length -
+                                            1].date.split(' ')[1].slice(0, 5) }}</p>
                                 </li>
                             </ul>
                         </div>
