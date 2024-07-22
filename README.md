@@ -24,5 +24,6 @@ nome e immagine di ogni contatto
 1 - Dichiaro un'altra funzione che mi permette di aggiungere un messaggio alla chat con la classe message-sent e di avere una risposta dopo un secondo tramite setTimeout, il tutto tramite keyup.enter;
 
 <!-- MILESTONE 4 -->
-1 - Creiamo un array vuoto;
-2 - Creiamo una funzione che controlla se ogni contatto dell'array include le stesse lettere che scriviamo in input;
+1 - Creiamo un method per vedere se i singoli nomi INCLUDONO ciò che vado a scrivere su filter;
+2 - Diamo all'input un v-model con filter;
+3 - Richiamiamo con un v-show la funzione appena creata;

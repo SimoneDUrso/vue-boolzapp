@@ -7,7 +7,6 @@ createApp({
             active: 0,
             newMessage: null,
             filter: '',
-            filtered_contacts: [],
 
             contacts: [
                 {
