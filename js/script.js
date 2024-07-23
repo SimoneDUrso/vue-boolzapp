@@ -284,14 +284,17 @@ createApp({
         },
 
         // Funzione che permette l'inserimento delle emoji all'interno dell'input
-        addEmoji(emoji) {
+        addEmoji(emoji, event) {
+            // Questa funzione serve a non far chiudere il dropdown se richiamato all'interno di "li" nell'HTML
+            event.stopPropagation();
+
             if (this.newMessage) {
                 this.newMessage += emoji;
             } else {
                 this.newMessage = emoji;
             }
             // Arrow function che permette all'input di prendere il focus quando ha qualcosa all'interno, così quando andiamo a cliccare una emoji non abbiamo necessità
-            // di premere dentro l'input per poi inviare il messaggio.
+            // di premere dentro l'input per poi inviare il
             this.$nextTick(() => {
                 this.$refs.messageInput.focus();
             });

@@ -152,7 +152,8 @@
                                     <ul class="dropdown-menu w-dropdown  list-unstyled">
                                         <ul class="d-flex list-unstyled flex-wrap">
                                             <li v-for="emoji in emojiArray"><a class="dropdown-item" href="#"
-                                                    @click="addEmoji(emoji)">{{emoji}}</a>
+                                                    @click="addEmoji(emoji, $event)">{{emoji}}</a>
+                                                <!-- $event scritto qui sopra serve a richiamare l'evento "stopPropagation" fatto nel JS per non far chiudere il dropdown -->
                                             </li>
                                         </ul>
                                     </ul>
