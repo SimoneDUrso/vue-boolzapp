@@ -149,55 +149,20 @@
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="fa-regular fa-face-smile" style="color: #c0c0c0;"></i>
                                     </button>
-                                    <ul class="dropdown-menu w-dropdown">
+                                    <ul class="dropdown-menu w-dropdown  list-unstyled">
                                         <ul class="d-flex list-unstyled flex-wrap">
-                                            <li v-for="emoji, index in emojiArray"><a class="dropdown-item" href="#"
+                                            <li v-for="emoji in emojiArray"><a class="dropdown-item" href="#"
                                                     @click="addEmoji(emoji)">{{emoji}}</a>
                                             </li>
-                                            <!-- <li><a class="dropdown-item" href="#"
-                                                    @click="addEmoji('&#128513')">&#128513</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="#"
-                                                    @click="addEmoji('&#128514')">&#128514</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="#"
-                                                    @click="addEmoji('&#128515')">&#128515</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="#"
-                                                    @click="addEmoji('&#128516')">&#128516</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="#"
-                                                    @click="addEmoji('&#128517')">&#128517</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="#"
-                                                    @click="addEmoji('&#128518')">&#128518</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="#"
-                                                    @click="addEmoji('&#128519')">&#128519</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="#"
-                                                    @click="addEmoji('&#128520')">&#128520</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="#"
-                                                    @click="addEmoji('&#128517')">&#128521</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="#"
-                                                    @click="addEmoji('&#128517')">&#128522</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="#"
-                                                    @click="addEmoji('&#128517')">&#128523</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="#"
-                                                    @click="addEmoji('&#128517')">&#128524</a>
-                                            </li> -->
-
                                         </ul>
                                     </ul>
                                 </div>
 
                                 <div class="col-10 d-flex justify-content-center">
-                                    <input type="text" class="w-100 form-control py-2" placeholder="Scrivi un messaggio"
-                                        v-model="newMessage" @keyup.enter="addMessage()">
+                                    <!-- "ref" serve per far riferimento alla funzione che abbiamo scritto nell'JS -->
+                                    <input ref="messageInput" type="text" class="w-100 form-control py-2"
+                                        placeholder="Scrivi un messaggio" v-model="newMessage"
+                                        @keyup.enter="addMessage()">
                                 </div>
 
                                 <div class="col-1 d-flex justify-content-center align-items-center">

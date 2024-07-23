@@ -43,7 +43,6 @@ createApp({
                 "😕",
                 "😖",
                 "😘",
-
             ],
 
             contacts: [
@@ -284,12 +283,18 @@ createApp({
             }
         },
 
+        // Funzione che permette l'inserimento delle emoji all'interno dell'input
         addEmoji(emoji) {
             if (this.newMessage) {
                 this.newMessage += emoji;
             } else {
                 this.newMessage = emoji;
             }
+            // Arrow function che permette all'input di prendere il focus quando ha qualcosa all'interno, così quando andiamo a cliccare una emoji non abbiamo necessità
+            // di premere dentro l'input per poi inviare il messaggio.
+            this.$nextTick(() => {
+                this.$refs.messageInput.focus();
+            });
         }
     },
 
