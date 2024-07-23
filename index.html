@@ -82,6 +82,7 @@
                         </div>
                     </div>
 
+                    <!-- Barra superiore del profilo della chat nella quale siamo -->
                     <div class="col-8 p-0 d-flex flex-column justify-content-between">
                         <div class="d-flex flex-column">
                             <div class="bg-profile d-flex p-2 align-items-center">
@@ -113,6 +114,8 @@
                                             <p v-else class="margin-message text-start m-0 d-flex">
                                                 {{ message.message }}</p>
                                         </div>
+
+                                        <!-- Creazione del dropdown all'interno dei messaggi col richiamo alla funzione per l'eliminazione del messaggio stesso -->
                                         <div>
                                             <div class="dropdown">
                                                 <button class="border-0 btn btn-sm ms-4 pt-0" type="button"
@@ -138,10 +141,58 @@
                             </div>
                         </div>
 
+                        <!-- Contenitore che ha al suo interno l'icona dello smile, l'input di inserimento del messaggio e l'icona del microfono/invio -->
                         <div class="container-text py-3 bg-profile">
                             <div class="row">
-                                <div class="col-1 fs-4 d-flex justify-content-center align-items-center">
-                                    <i class="fa-regular fa-face-smile" style="color: #c0c0c0;"></i>
+                                <div class="col-1 fs-4 d-flex justify-content-center align-items-center dropdown">
+                                    <button class="border-0" type="button" id="dropdownMenuButton1"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-regular fa-face-smile" style="color: #c0c0c0;"></i>
+                                    </button>
+                                    <ul class="dropdown-menu w-dropdown">
+                                        <ul class="d-flex list-unstyled flex-wrap">
+                                            <li v-for="emoji, index in emojiArray"><a class="dropdown-item" href="#"
+                                                    @click="addEmoji(emoji)">{{emoji}}</a>
+                                            </li>
+                                            <!-- <li><a class="dropdown-item" href="#"
+                                                    @click="addEmoji('&#128513')">&#128513</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#"
+                                                    @click="addEmoji('&#128514')">&#128514</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#"
+                                                    @click="addEmoji('&#128515')">&#128515</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#"
+                                                    @click="addEmoji('&#128516')">&#128516</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#"
+                                                    @click="addEmoji('&#128517')">&#128517</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#"
+                                                    @click="addEmoji('&#128518')">&#128518</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#"
+                                                    @click="addEmoji('&#128519')">&#128519</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#"
+                                                    @click="addEmoji('&#128520')">&#128520</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#"
+                                                    @click="addEmoji('&#128517')">&#128521</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#"
+                                                    @click="addEmoji('&#128517')">&#128522</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#"
+                                                    @click="addEmoji('&#128517')">&#128523</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#"
+                                                    @click="addEmoji('&#128517')">&#128524</a>
+                                            </li> -->
+
+                                        </ul>
+                                    </ul>
                                 </div>
 
                                 <div class="col-10 d-flex justify-content-center">

@@ -71,6 +71,8 @@ li:hover {
     min-width: 180px;
     max-width: 600px;
     word-wrap: break-word;
+    word-break: break-word;
+    white-space: pre-wrap;
 }
 
 .message-received {
@@ -81,12 +83,8 @@ li:hover {
     background-color: white;
 }
 
-.dropdown {}
-
-.dropdown-menu {
-    z-index: 100;
-    position: relative;
-    width: 50%;
+.w-dropdown {
+    width: 250px;
 }
 
 /* STYLE CLASSES */

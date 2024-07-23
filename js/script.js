@@ -18,6 +18,34 @@ createApp({
                 "Sparisci dalla mia vita!"
             ],
 
+            emojiArray: [
+                "😀",
+                "😁",
+                "😂",
+                "😃",
+                "😄",
+                "😅",
+                "😆",
+                "😇",
+                "😈",
+                "😉",
+                "😊",
+                "😋",
+                "😌",
+                "😍",
+                "😎",
+                "😏",
+                "😐",
+                "😑",
+                "😒",
+                "😓",
+                "😔",
+                "😕",
+                "😖",
+                "😘",
+
+            ],
+
             contacts: [
                 {
                     name: 'Michele',
@@ -225,7 +253,7 @@ createApp({
                 }, 3000);
 
                 setTimeout(() => {
-                    writing.innerHTML = "Ultimo accesso oggi alle" + now.split(" ")[1]
+                    writing.innerHTML = "Ultimo accesso oggi alle" + ' ' + now.split(" ")[1]
                 }, 5000);
             }
             this.newMessage = null
@@ -235,24 +263,34 @@ createApp({
             return contact.name.toLowerCase().includes(this.filter.toLowerCase())
         },
 
+        // Generazione casuale di una risposta da parte del PC 
         randomReplay() {
             const random = Math.floor(Math.random() * this.randomAnswers.length)
             return this.randomAnswers[random]
         },
 
+        // Method per avere sotto il nome nella lista contatti sempre l'ultimo messaggio inviato
         lastMessage(contact) {
             if (contact.messages.length > 0) {
                 return contact.messages[contact.messages.length - 1]
             }
         },
 
+        // Sovrascrizione del messaggio contenuto nel div (per l'eliminazione del messaggio)
         deleteMessage(index) {
             if (confirm("Sei sicuro di voler cancellare il messaggio? Non potrai più recuperarlo.")) {
-                let deleted = this.contacts[this.active].messages[index].message = "Questo messaggio è stato eliminato."
+                this.contacts[this.active].messages[index].message = "Questo messaggio è stato eliminato."
 
             }
-        }
+        },
 
+        addEmoji(emoji) {
+            if (this.newMessage) {
+                this.newMessage += emoji;
+            } else {
+                this.newMessage = emoji;
+            }
+        }
     },
 
 }).mount("#app")
